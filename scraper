@@ -23,12 +23,12 @@ for product in soup.select('.product-card'):
     title = product.select_one('h5',class_='custom-product-title').text.strip()
     link = product.find('a')['href']
     price = product.find('span',class_='product-price text-left jimbo-green-bold').text.strip()
-    print(price)
     if price:
         price = get_digit_price(price)
     else:
         price = 0
     data.append({'عنوان': title, 'لینک': link,'قیمت':price})
+    print("this obj is created!")
 
 # 3. ذخیره در فایل اکسل
 df = pd.DataFrame(data)
