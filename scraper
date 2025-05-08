@@ -11,6 +11,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 def get_digit_price(str_price):
     try:
         price = int(str_price.replace('تومان', '').replace(' ', '').replace('٫', '').replace(",", "").strip())
+        print("---------------------------------------------------------------------------")
     except Exception as ex:
         print(ex)
         price = 0
